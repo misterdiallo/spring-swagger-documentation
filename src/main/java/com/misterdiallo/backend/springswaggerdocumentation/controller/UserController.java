@@ -1,6 +1,7 @@
 package com.misterdiallo.backend.springswaggerdocumentation.controller;
 
 import com.misterdiallo.backend.springswaggerdocumentation.model.UserModel;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@Api(description = "It's provide the /api/users path and contains all the users paths inside", tags = "User Controller.", basePath = "/api/users")
 @ApiResponses(value = {
         @ApiResponse(code=404, message = "404 error can only occure when there's an error in the url path.")
 })
