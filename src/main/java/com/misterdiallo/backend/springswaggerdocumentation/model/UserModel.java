@@ -1,9 +1,15 @@
 package com.misterdiallo.backend.springswaggerdocumentation.model;
 
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
 public class UserModel {
 
+    @ApiModelProperty(value = "[STRING] Username of the user.")
     private String username;
+    @ApiModelProperty(value = "[STRING] Email Address of the user.")
     private String email;
     private int age;
     private String password;

@@ -1,6 +1,9 @@
 package com.misterdiallo.backend.springswaggerdocumentation.controller;
 
 import com.misterdiallo.backend.springswaggerdocumentation.model.UserModel;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,9 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@ApiResponses(value = {
+        @ApiResponse(code=404, message = "404 error can only occure when there's an error in the url path.")
+})
 public class UserController {
 
     @PostMapping("/add-new-user")
+    @ApiOperation(value = "Request to Add NEW USER. It accepts a USERMOEL and return a USERMODEL also")
     public UserModel createNewUser(@RequestBody UserModel userModel) {
         return userModel;
     }
